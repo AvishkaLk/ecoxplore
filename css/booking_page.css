@@ -11,6 +11,7 @@ body {
   line-height: 1.6;
 }
 
+/*Preloader*/
 #preloader {
   background: #000 url(../images/loader.gif) no-repeat center center;
   background-size: 40%;
@@ -26,6 +27,7 @@ header {
   position: relative;
 }
 
+/*Navbar section*/
 #navbar {
   width: 100%;
   height: 60px;
@@ -188,6 +190,7 @@ li {
   margin-left: 7px;
 }
 
+/*Header line section*/
 #header_line {
   position: relative;
   text-align: center;
@@ -230,6 +233,7 @@ li {
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
 }
 
+/*Booking form section*/
 .booking_form_part {
   max-width: 650px;
   margin: 40px auto;

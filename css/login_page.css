@@ -12,6 +12,7 @@ body {
     min-height: 100vh;
 }
 
+/*Preloader*/
 #preloader {
     background: #000 url(../images/loader.gif) no-repeat center center;
     background-size: 40%;
@@ -27,6 +28,7 @@ header {
     position: relative;
 }
 
+/*Navbar section*/
 #navbar {
     width: 100%;
     height: 60px;
@@ -190,7 +192,7 @@ li {
     margin-left: 7px;
 }
 
-/* Glass wrapper */
+/* wrapper */
 .wrapper {
     position: relative;
     width: 360px;

@@ -5,6 +5,7 @@
     font-family: "Poppins", sans-serif;
 }
 
+/*Preloader*/
 #preloader {
     background: #000 url(../images/loader.gif) no-repeat center center;
     background-size: 40%;
@@ -20,6 +21,7 @@ header {
     position: relative;
 }
 
+/*Navbar section*/
 #navbar {
     width: 100%;
     height: 60px;
@@ -179,6 +181,7 @@ li {
     margin-left: 7px;
 }
 
+/*Image section*/
 #main_heading {
     color: #007bff;
     position: relative;
@@ -507,7 +510,7 @@ nav .items .item:hover {
         margin-left: 20px;
     }
 
-    #dropdownmenu a{
+    #dropdownmenu a {
         margin-left: 0px !important;
     }
 
