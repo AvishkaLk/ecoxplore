@@ -1,4 +1,4 @@
-//Dropdown (safe checks
+//Dropdown menu (Shows the dropdown when the "Dropdown" button is hovered.)
 const dropdownParent = document.querySelector('.dropdown_button');
 const dropdownMenu = document.querySelector('#dropdownmenu');
 
@@ -15,26 +15,27 @@ if (dropdownParent && dropdownMenu) {
     }
   });
 } else {
-  //Not fatal, just log so we know
+
   if (!dropdownParent) console.debug('dropdownParent not found (#links li a[href="contact"])');
   if (!dropdownMenu) console.debug('dropdownMenu not found (#dropdownmenu)');
 }
 
-//Preloader
+//Preloader (When the webpage finishes loading, this function hides the preloader.)
+// Wait until the whole page fully loads
 window.addEventListener("load", function () {
   const preloader = document.getElementById("preloader");
 
-  //Add fade-out transition
+  // Smooth fade-out animation
   preloader.style.transition = "opacity 0.6s ease";
   preloader.style.opacity = "0";
 
-  //Remove preloader from DOM after fade-out
+  // Remove preloader from screen completely
   setTimeout(() => {
     preloader.style.display = "none";
-  }, 600); //Match transition duration
+  }, 600);
 });
 
-//Navbar toggle
+//Mobile navbar toggle
 const toggleBtn = document.getElementById('toggle_btn');
 const navbarLinks = document.getElementById('links');
 
@@ -47,7 +48,7 @@ if (!navbarLinks) {
 
 if (toggleBtn && navbarLinks) {
   toggleBtn.addEventListener('click', (e) => {
-    //optional: stop event from bubbling to document click listeners
+
     e.stopPropagation();
     navbarLinks.classList.toggle('active');
     console.log('Navbar toggle clicked — active:', navbarLinks.classList.contains('active'));
@@ -55,7 +56,7 @@ if (toggleBtn && navbarLinks) {
 
   //close menu when clicking outside (mobile)
   document.addEventListener('click', (event) => {
-    //if menu open and click outside menu + toggleBtn, close it
+
     if (navbarLinks.classList.contains('active') &&
       !navbarLinks.contains(event.target) &&
       !toggleBtn.contains(event.target)) {
@@ -65,7 +66,7 @@ if (toggleBtn && navbarLinks) {
   });
 
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) {  //adjust to your desktop breakpoint
+    if (window.innerWidth > 768) {
       navbarLinks.classList.remove('active');
       console.log('Navbar reset on resize to desktop');
     }

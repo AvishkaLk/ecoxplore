@@ -1,15 +1,16 @@
-//Preloader
+//Preloader (When the webpage finishes loading, this function hides the preloader.)
+// Wait until the whole page fully loads
 window.addEventListener("load", function () {
   const preloader = document.getElementById("preloader");
 
-  // Add fade-out transition
+  // Smooth fade-out animation
   preloader.style.transition = "opacity 0.6s ease";
   preloader.style.opacity = "0";
 
-  //Remove preloader from DOM after fade-out
+  // Remove preloader from screen completely
   setTimeout(() => {
     preloader.style.display = "none";
-  }, 600); //Match transition duration
+  }, 600);
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -46,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
       startAutoSlide();
     }
 
+    /*Image slider (automatic + manual pre/next buttons)*/
     const nextBtn = document.getElementById('next');
     const prevBtn = document.getElementById('preview');
     if (nextBtn) nextBtn.addEventListener('click', () => changeSlide(1));
@@ -56,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log(`Slider initialized with ${slides.length} slides.`);
   }
 
-  //Dropdown
+  //Dropdown menu (Shows the dropdown when the "Dropdown" button is hovered.)
   const dropdownParent = document.querySelector('.dropdown_button');
   const dropdownMenu = document.querySelector('#dropdownmenu');
 
@@ -73,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   } else {
-    //Not fatal, just log so we know
+
     if (!dropdownParent) console.debug('dropdownParent not found (#links li a[href="contact"])');
     if (!dropdownMenu) console.debug('dropdownMenu not found (#dropdownmenu)');
   }
@@ -90,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!announcement) console.debug('.announcements element not found.');
   }
 
-  //Navbar toggle (robust + debug)
+  //Mobile Navbar toggle (Shows and hides the navigation links when menu icon is clicked)
   const toggleBtn = document.getElementById('toggle_btn');
   const navbarLinks = document.getElementById('links');
 
@@ -103,15 +105,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (toggleBtn && navbarLinks) {
     toggleBtn.addEventListener('click', (e) => {
-      // ptional: stop event from bubbling to document click listeners
+
       e.stopPropagation();
+      // Toggle the 'active' class to show/hide menu for mobile view
       navbarLinks.classList.toggle('active');
       console.log('Navbar toggle clicked — active:', navbarLinks.classList.contains('active'));
     });
 
     //close menu when clicking outside (mobile)
     document.addEventListener('click', (event) => {
-      //if menu open and click outside menu + toggleBtn, close it
+
       if (navbarLinks.classList.contains('active') &&
         !navbarLinks.contains(event.target) &&
         !toggleBtn.contains(event.target)) {
@@ -121,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     window.addEventListener('resize', () => {
-      if (window.innerWidth > 768) {  //adjust to your desktop breakpoint
+      if (window.innerWidth > 768) {
         navbarLinks.classList.remove('active');
         console.log('Navbar reset on resize to desktop');
       }
