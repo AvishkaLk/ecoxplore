@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login form</title>
+    <link rel="stylesheet" href="css/login_page.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/aquawolf04/font-awesome-pro@5cd1511/css/all.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Stack+Sans+Headline:wght@200..700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="preloader"></div>
+    <header>
+        <div id="navbar">
+            <div id="logo_and_company_name_sector">
+                <img src="images/circle-41677.png" alt="Logo img" id="logo_image">
+                <div id="company_name">
+                    <h1>EcoXplore Adventures</h1>
+                </div>
+            </div>
+            <div id="navbarcontent">
+                <ul id="links">
+                    <li><a href="about_us_page.html">About</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tours_and_packages.html">Tours</a></li>
+                    <li><a href="gallery_page.html">Gallery</a></li>
+                    <li><a class="dropdown_button">Dropdown<i class="fa-sharp fa-solid fa-caret-down"></i></a>
+                        <ul id="dropdownmenu">
+                            <li><a href="booking_form.html" class="dropdown_btn" id="btn_Account">Booking</a></li>
+                            <li><a href="login_form.html#register" class="dropdown_btn" id="btn_Register">Register</a>
+                            </li>
+                            <li><a href="login_form.html#login" class="dropdown_btn" id="btn_Login">Login</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <i class="fa-solid fa-user" id="user_icon"></i>
+                <div id="toggle_btn">
+                    <i class="fa-regular fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="wrapper">
+        <span class="icon_close"><i class="fa-solid fa-xmark"></i></span>
+
+        <!-- Login Form -->
+        <div class="form_box login">
+            <h2>Login</h2>
+            <form action="#">
+                <div class="input_box">
+                    <span class="icon"><i class="fas fa-user"></i></span>
+                    <input type="text" required>
+                    <label>Name</label>
+                </div>
+                <div class="input_box">
+                    <span class="icon"><i class="fas fa-lock"></i></span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember_forgot">
+                    <label><input type="checkbox"><span>Remember me</span></label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="login_register">
+                    <p>Don't have an account? <a href="#" class="register_link">Register</a></p>
+                </div>
+            </form>
+        </div>
+
+        <!-- Register Form -->
+        <div class="form_box register">
+            <h2>Registration</h2>
+            <form action="#">
+                <div class="input_box">
+                    <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input_box">
+                    <span class="icon"><i class="fas fa-user"></i></span>
+                    <input type="text" required>
+                    <label>Username</label>
+                </div>
+                <div class="input_box">
+                    <span class="icon"><i class="fas fa-lock"></i></span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember_forgot">
+                    <label><input type="checkbox">I agree to the terms & conditions</label>
+                </div>
+                <button type="submit" class="btn">Register</button>
+                <div class="login_register">
+                    <p>Already have an account? <a href="#" class="login_link">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/login_page.js"></script>
+</body>
+
+</html>

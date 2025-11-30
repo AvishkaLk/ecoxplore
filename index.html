@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="css/home_page.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/aquawolf04/font-awesome-pro@5cd1511/css/all.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Stack+Sans+Headline:wght@200..700&display=swap"
+        rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="preloader"></div>
+    <header>
+        <div id="navbar">
+            <div id="logo_and_company_name_sector">
+                <img src="images/circle-41677.png" alt="Logo img" id="logo_image">
+                <div id="company_name">
+                    <h1>EcoXplore Adventures</h1>
+                </div>
+            </div>
+            <div id="navbarcontent">
+                <ul id="links">
+                    <li><a href="about_us_page.html">About</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tours_and_packages.html">Tours</a></li>
+                    <li><a href="gallery_page.html">Gallery</a></li>
+                    <li><a class="dropdown_button">Dropdown<i class="fa-sharp fa-solid fa-caret-down"></i></a>
+                        <ul id="dropdownmenu">
+                            <li><a href="booking_form.html" class="dropdown_btn" id="btn_Account">Booking</a></li>
+                            <li><a href="login_form.html#register" class="dropdown_btn" id="btn_Register">Register</a>
+                            </li>
+                            <li><a href="login_form.html#login" class="dropdown_btn" id="btn_Login">Login</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <i class="fa-solid fa-user" id="user_icon"></i>
+                <div id="toggle_btn">
+                    <i class="fa-regular fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="slider_container">
+        <!-- Left arrow -->
+        <button class="arrow_buttons" id="preview">&#10094;</button>
+
+        <!-- Image + text blocks -->
+        <div class="slide">
+            <img src="images/toomas-tartes-Yizrl9N_eDA-unsplash.jpg" alt="image01" class="images">
+            <div class="caption">
+                <h2>Explore the Wilderness</h2>
+                <p>Join EcoXplore Adventures and discover the beauty of nature responsibly.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="images/kalen-emsley-mgJSkgIo_JI-unsplash.jpg" alt="image02" class="images">
+            <div class="caption">
+                <h2>Adventure Awaits</h2>
+                <p>Experience hiking, cycling, and rafting with eco-friendly guides.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="images/kalen-emsley-G1qxBDxM8vE-unsplash.jpg" alt="image03" class="images">
+            <div class="caption">
+                <h2>Travel. Discover. Protect.</h2>
+                <p>Enjoy breathtaking views while preserving the planet for future explorers.</p>
+            </div>
+        </div>
+
+        <!-- Right arrow -->
+        <button class="arrow_buttons" id="next">&#10095;</button>
+    </div>
+
+    <section id="intro_section">
+        <h2>Welcome to EcoXplore Adventures</h2>
+        <p>EcoXplore Adventures is committed to eco-friendly tourism, offering hiking, camping, cycling, and river
+            rafting experiences while preserving nature for future generations.</p>
+    </section>
+
+    <section id="featured_tours">
+        <h2>Featured Tours</h2>
+        <div class="tour_cards">
+            <div class="tour_card">
+                <img src="images/StockCake-Mountain_Hiking_Images_and_Photos_1763877304.jpg" alt="Hiking Tour">
+                <h3>Mountain Hiking</h3>
+                <p>Explore breathtaking mountain trails with expert eco-guides.</p>
+                <a href="tours.html" class="learn_more_btn">Learn More</a>
+            </div>
+
+            <div class="tour_card">
+                <img src="images/StockCake-Forest_Camping_night_Images_and_Photos_1763877406.jpg" alt="Camping Tour">
+                <h3>Forest Camping</h3>
+                <p>Experience peaceful nights in nature with sustainable camping practices.</p>
+                <a href="tours.html" class="learn_more_btn">Learn More</a>
+            </div>
+
+            <div class="tour_card">
+                <img src="images/StockCake-River_Rafting_Images_and_Photos_1763877530.jpg" alt="Rafting Tour">
+                <h3>River Rafting</h3>
+                <p>Adventure-packed rafting tours in Sri Lanka’s natural rivers.</p>
+                <a href="tours.html" class="learn_more_btn">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="announcements">
+        <h2>Announcements</h2>
+        <i class="fa-solid fa-xmark-large" id="announcement_close"></i>
+        <p><strong>Stage 4 Update:</strong> Overgrown sections between Thawalanthenna - Pundaluoya have been cleared and
+            are now fully accessible. Please continue to follow the official waymarking signs and stay on designated
+            trail. Take extra care in areas that may still be slippery after recent rains.</p>
+
+        <p><strong>All hikers and trail operators are strongly advised to:</strong></p>
+        <ol>
+            <li>Closely monitor Met Department weather updates.</li>
+            <li>Follow instructions issued by the Disaster Management Centre (DMC) and local authorities.</li>
+            <li>Be prepared for possible evacuation in high-risk areas.</li>
+            <li>Postpone or avoid hiking activities along the Pekoe Trail during this period.</li>
+        </ol>
+
+        <p>Directional sign painting is currently underway on Stage 1. Due to weather constraints, some signs are still
+            in progress and not yet fully completed. Please follow existing markers or The Pekoe Trail App for
+            navigation.</p>
+
+        <p>Due to changing weather conditions in the Central Highlands, hikers are advised to exercise extra caution on
+            the following stages: Stage 2, 3, 4, 9, 12, 17 & 18. Trails may be slippery with reduced visibility and
+            sudden rainfall.</p>
+
+        <p><strong>Respect the trail and its communities:</strong> Stick to marked paths, avoid littering, and don’t
+            give money to children. Let’s support local communities in sustainable ways!</p>
+    </section>
+    <div id="contact_panel">
+        <div id="contact_panel_left">
+            <div id="logo_part">
+                <img src="images/circle-41677.png" alt="logo">
+                <div id="name">
+                    <h1>EcoXplore <span>Adventures</span></h1>
+                </div>
+            </div>
+            <h2>EcoXplore Adventures (Private) Limited</h2>
+            <h3>No 1101, Orchid Road, Colombo, Sri Lanka.<span>10250 </span></h3>
+            <h3>+94 11 2233 445<span>+94 77 3879 245</span></h3>
+            <h4>www.ecoxploreadventures.lk</h4>
+
+            <div class="socia_media_icons">
+                <i class="fa-brands fa-square-facebook"></i>
+                <i class="fa-brands fa-square-instagram"></i>
+                <i class="fa-brands fa-square-youtube"></i>
+                <i class="fa-brands fa-linkedin"></i>
+            </div>
+            <p>Privacy policies</p>
+            <p>Terms & Conditions</p>
+        </div>
+        <div id="contact_panel_right">
+            <h1>Start your next adventure with us<span>Contact EcoXplore today!</span></h1>
+            <h2>Call</h2>
+            <h3>+94 77 3879 245</h3>
+            <img src="images/icons8-whatsapp-48.png" alt="Whatsapp icon">
+            <p id="whatsapp_content">Contact us on Whatsapp</p>
+            <h2>Email</h2>
+            <h3>ecoxplore@gmail.com</h3>
+        </div>
+
+        <div class="bottom_line">
+            <p id="copyright_part">2025 © EcoXplore Adventures (Private) Limited. All Right Reserved.</p>
+        </div>
+    </div>
+
+    <script src="js/home_page.js"></script>
+</body>
+
+</html>

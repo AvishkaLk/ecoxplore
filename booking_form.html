@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Form - EcoXplore Adventures</title>
+    <link rel="stylesheet" href="css/booking_page.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/aquawolf04/font-awesome-pro@5cd1511/css/all.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Stack+Sans+Headline:wght@200..700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="preloader"></div>
+    <header>
+        <div id="navbar">
+            <div id="logo_and_company_name_sector">
+                <img src="images/circle-41677.png" alt="Logo img" id="logo_image">
+                <div id="company_name">
+                    <h1>EcoXplore Adventures</h1>
+                </div>
+            </div>
+            <div id="navbarcontent">
+                <ul id="links">
+                    <li><a href="about_us_page.html">About</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tours_and_packages.html">Tours</a></li>
+                    <li><a href="gallery_page.html">Gallery</a></li>
+                    <li><a class="dropdown_button">Dropdown<i class="fa-sharp fa-solid fa-caret-down"></i></a>
+                        <ul id="dropdownmenu">
+                            <li><a href="booking_form.html" class="dropdown_btn" id="btn_Account">Booking</a></li>
+                            <li><a href="login_form.html#register" class="dropdown_btn" id="btn_Register">Register</a>
+                            </li>
+                            <li><a href="login_form.html#login" class="dropdown_btn" id="btn_Login">Login</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <i class="fa-solid fa-user" id="user_icon"></i>
+                <div id="toggle_btn">
+                    <i class="fa-regular fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <header id="header_line">
+        <img src="images/wallpaperflare.com_wallpaper.jpg" alt="EcoXplore Team" id="header_line_image">
+        <h1>Booking</h1>
+        <p class="header_subtitle">Reserve your spot in just a few clicks.</p>
+    </header>
+
+    <div class="booking_form_part">
+        <form id="booking_form">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="tour">Preferred Tour</label>
+            <select id="tour" name="tour" required>
+                <option value="" disabled selected>Select a tour</option>
+                <option value="mountain">Mountain Adventure</option>
+                <option value="rafting">River Rafting</option>
+                <option value="cycling">Cycling Adventure</option>
+                <option value="wildlife">Wildlife Safari</option>
+                <option value="hot-air-balloon">Hot Air Balloon Safari</option>
+                <option value="cave">Cave Exploration</option>
+                <option value="island">Island Discovery</option>
+                <option value="rainforest">Rainforest Trek</option>
+                <option value="cultural">Cultural Heritage Tour</option>
+                <option value="kayaking">Coastal Kayaking</option>
+                <option value="jungle-camping">Jungle Camping</option>
+                <option value="highland-hiking">Highland Hiking</option>
+                <option value="eco-farm">Eco Farm Stay</option>
+                <option value="bird-watching">Bird Watching Trail</option>
+                <option value="waterfall">Waterfall Retreat</option>
+                <option value="wellness">Wellness & Yoga Retreat</option>
+            </select>
+
+            <label for="dates">Preferred Dates</label>
+            <input type="date" id="dates" name="dates" required>
+
+            <label for="notes">Additional Notes</label>
+            <textarea id="notes" name="notes"></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <div class="bottom_line">
+        <p id="copy_right_part">2025 © EcoXplore Adventures (Private) Limited. All Right Reserved.</p>
+    </div>
+
+    <script src="js/booking_page.js"></script>
+
+</body>
+
+</html>
