@@ -1,0 +1,755 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-image: url("../images/andhika-soreng-US06QF_sxu8-unsplash.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+#preloader {
+    background: #000 url(../images/loader.gif) no-repeat center center;
+    background-size: 40%;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+header {
+    position: relative;
+}
+
+#navbar {
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#logo_and_company_name_sector {
+    display: flex;
+    align-items: center;
+}
+
+#logo_image {
+    width: 37px;
+    margin-right: 15px;
+}
+
+#company_name {
+    margin-right: 100px;
+}
+
+#navbar #company_name h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#navbarcontent {
+    display: flex;
+    align-items: center;
+}
+
+li {
+    list-style: none;
+}
+
+#navbar #links {
+    display: flex;
+    gap: 32px;
+    margin-right: 400px;
+}
+
+#navbar a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+#navbar #links>li>a {
+    position: relative;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+#navbar #links>li>a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background: black;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+#navbar #links>li>a:hover::after {
+    width: 100%;
+}
+
+#navbar #links.active {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+
+.dropdown_btn::after {
+    content: none !important;
+}
+
+#navbar #links a:hover {
+    cursor: pointer;
+}
+
+#dropdownmenu {
+    position: absolute;
+    margin-top: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+    min-width: 160px;
+    z-index: 1000;
+}
+
+#dropdownmenu li {
+    display: block;
+}
+
+.dropdown_btn {
+    width: 100%;
+    padding: 10px 16px;
+    border: none;
+    background: white;
+    text-align: left;
+    font-size: 14px;
+    cursor: pointer;
+    color: black;
+}
+
+.dropdown_btn:hover {
+    background-color: #f0f0f0;
+    font-weight: 500;
+    border-radius: 6px;
+}
+
+#dropdownmenu a {
+    display: block;
+    padding: 10px 16px;
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+#navbar #dropdownmenu a:hover {
+    background-color: rgb(211, 206, 206);
+    color: black;
+    font-weight: 500;
+    border-radius: 6px;
+}
+
+#user_icon {
+    width: 32px;
+    height: 32px;
+    background-color: gray;
+    color: black;
+    padding: 9px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+#navbar #toggle_btn {
+    color: rgb(86, 85, 85);
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+}
+
+#links .fa-sharp {
+    margin-left: 7px;
+}
+
+/* Glass wrapper */
+.wrapper {
+    position: relative;
+    width: 360px;
+    height: 400px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    margin-left: 15%;
+    margin-top: 8%;
+    align-items: center;
+    overflow: hidden;
+    transition: height 0.3s ease;
+}
+
+/* Height when active */
+.wrapper.active {
+    height: 470px;
+    margin-top: 3%;
+}
+
+/* Close icon */
+.wrapper .icon_close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Form box */
+.form_box {
+    width: 100%;
+    padding: 40px;
+    padding-top: 60px;
+}
+
+.wrapper .form_box.login {
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+}
+
+.wrapper.active .form_box.login {
+    transform: translateX(-400px);
+    transition: none;
+}
+
+.wrapper .form_box.register {
+    position: absolute;
+    transform: translateX(400px);
+    transition: transform 0.3s ease;
+}
+
+.wrapper.active .form_box.register {
+    transform: translateX(0);
+}
+
+/* Titles */
+.form_box h2 {
+    font-size: 32px;
+    color: white;
+    text-align: center;
+}
+
+.input_box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid white;
+    margin: 30px 0;
+}
+
+.input_box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.input_box input:focus~label,
+.input_box input:valid~label {
+    top: -5px;
+}
+
+.input_box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.input_box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 19px;
+    color: white;
+    line-height: 50px;
+}
+
+/* Remember & forgot */
+.remember_forgot {
+    font-size: 12px;
+    color: white;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember_forgot label input {
+    accent-color: white;
+    margin-right: 3px;
+}
+
+.remember_forgot a {
+    color: white;
+    text-decoration: none;
+}
+
+.remember_forgot a:hover {
+    text-decoration: underline;
+}
+
+/* Button */
+.btn {
+    width: 220px;
+    height: 40px;
+    background: white;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    color: black;
+    font-weight: 600;
+    margin-left: 27px;
+}
+
+/* Register link */
+.login_register {
+    font-size: 12.5px;
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.login_register p a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.login_register p a:hover {
+    text-decoration: underline;
+}
+
+/*Media query*/
+/*Large Desktops (1200px)*/
+@media (min-width: 1200px) {
+    #navbar #logo_and_company_name_sector img {
+        margin-left: 20px;
+    }
+
+    #navbar #links {
+        gap: 40px;
+    }
+
+    #links .fa-sharp {
+        margin-left: 7px;
+    }
+
+    #navbar #links li a {
+        font-size: 14px;
+    }
+
+    #user_icon {
+        margin-left: -140px;
+    }
+
+    .wrapper {
+        width: 360px;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        margin-left: 200px;
+    }
+
+    .form_box h2 {
+        font-size: 32px;
+    }
+
+    .input_box {
+        height: 50px;
+    }
+
+    .btn {
+        height: 45px;
+        font-size: 16px;
+    }
+}
+
+/*Laptops (992px to 1199px)*/
+@media (max-width: 1199px) {
+    #navbar #logo_and_company_name_sector h1 {
+        font-size: 21px;
+    }
+
+    #navbar #links {
+        margin-right: 200px;
+        gap: 25px;
+    }
+
+    #navbar #links li a {
+        font-size: 13px;
+    }
+
+    #navbar img {
+        margin-left: 10px;
+    }
+
+    .wrapper {
+        width: 360px;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        margin-left: 130px;
+    }
+
+    .form_box h2 {
+        font-size: 29px;
+    }
+
+    .input_box {
+        height: 45px;
+    }
+
+    .btn {
+        height: 40px;
+        font-size: 16px;
+    }
+}
+
+/*Tablets (768px to 991px)*/
+@media (max-width: 991px) {
+    #logo_image {
+        width: 30px;
+        margin-top: 2px;
+    }
+
+    #navbar #logo_and_company_name_sector h1 {
+        font-size: 19.5px;
+        margin-top: 3px;
+    }
+
+    #user_icon {
+        display: none;
+    }
+
+    #navbar #links {
+        margin-right: 50px;
+        gap: 25px;
+    }
+
+    .wrapper {
+        width: 340px;
+        height: 380px;
+        display: flex;
+        justify-content: center;
+        margin-left: 130px;
+        margin-top: 9%;
+    }
+
+    .form_box h2 {
+        font-size: 24px;
+    }
+
+    .input_box {
+        height: 40px;
+    }
+
+    .btn {
+        height: 38px;
+        font-size: 14.5px;
+        margin-left: 17px;
+    }
+
+    .input_box .icon {
+        font-size: 16px;
+        right: 5px;
+    }
+}
+
+/*Mobile (576px to 767px)*/
+@media (max-width: 767px) {
+    #logo_image {
+        width: 30px;
+        margin-top: 8px;
+    }
+
+    #navbar #logo_and_company_name_sector h1 {
+        font-size: 18px;
+        margin-top: 8px;
+    }
+
+    #navbar {
+        height: 60px;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    #navbar #links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: white;
+        text-align: left;
+        padding: 10px 0;
+    }
+
+    #links .fa-sharp {
+        margin-left: 7px;
+    }
+
+    #navbar #links a {
+        margin-left: 20px;
+    }
+
+    #dropdownmenu a {
+        margin-left: 0px !important;
+    }
+
+    #navbar #links.active {
+        display: flex;
+    }
+
+    #logo_and_company_name_sector {
+        margin-bottom: 10px;
+    }
+
+    #navbar #toggle_btn {
+        position: absolute;
+        right: 20px;
+        top: 13px;
+        display: block;
+    }
+
+    #navbar #toggle_btn:hover {
+        color: black;
+    }
+
+    #user_icon {
+        display: none;
+    }
+
+    .wrapper {
+        width: 330px;
+        height: 340px;
+        margin-left: calc(50% - 165px);
+        margin-top: 15%;
+    }
+
+    .wrapper.active {
+        height: 400px;
+    }
+
+    .form_box h2 {
+        font-size: 21px;
+        margin-top: 20px;
+    }
+
+    .input_box {
+        height: 38px;
+    }
+
+    .btn {
+        height: 35px;
+        font-size: 13.5px;
+    }
+
+    .input_box .icon {
+        font-size: 14.5px;
+        right: 4px;
+    }
+
+    .input_box label {
+        font-size: 13px;
+        left: 4px;
+    }
+
+    .form_box.login .btn {
+        width: 150px;
+        height: 30px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .form_box.register .btn {
+        width: 150px;
+        height: 30px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .remember_forgot label {
+        font-size: 9.5px;
+    }
+
+    .login_register p {
+        font-size: 8px;
+    }
+
+    .form_box .login_register .register_link {
+        font-size: 8px;
+    }
+
+    .form_box .login_register .login_link {
+        font-size: 8px;
+    }
+}
+
+/*Small Mobile (Up to 575px)*/
+@media (max-width: 575px) {
+    #logo_image {
+        width: 27px;
+        margin-top: 7px;
+    }
+
+    #navbar #logo_and_company_name_sector h1 {
+        font-size: 14.5px;
+        margin-top: 10px;
+    }
+
+    #navbar {
+        padding: 8px 15px;
+    }
+
+    #navbar #links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: white;
+        text-align: left;
+        padding: 10px 0;
+    }
+
+    #navbar #links.active {
+        display: flex;
+    }
+
+    #toggle_btn {
+        display: block;
+    }
+
+    #user_icon {
+        display: none;
+    }
+
+    .wrapper {
+        width: 270px;
+        height: 350px;
+        margin-left: calc(50% - 135px);
+        margin-top: 20%;
+    }
+
+    .wrapper.active {
+        height: 400px;
+        margin-top: 16%;
+    }
+
+    .form_box h2 {
+        font-size: 21px;
+        margin-top: 0px;
+    }
+
+    .input_box {
+        height: 38px;
+    }
+
+    .btn {
+        height: 35px;
+        font-size: 13.5px;
+    }
+
+    .input_box .icon {
+        font-size: 14.5px;
+        right: 4px;
+    }
+
+    .input_box label {
+        font-size: 13px;
+        left: 4px;
+    }
+
+    .remember_forgot label span {
+        font-size: 9px;
+    }
+
+    .remember_forgot a {
+        font-size: 8px;
+        margin-top: 5px;
+    }
+
+    .form_box.login .btn {
+        width: 150px;
+        height: 30px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .form_box.register .btn {
+        width: 150px;
+        height: 30px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .remember_forgot label {
+        font-size: 9.5px;
+    }
+
+    .login_register p {
+        font-size: 8px;
+    }
+
+    .form_box .login_register .register_link {
+        font-size: 8px;
+    }
+
+    .form_box .login_register .login_link {
+        font-size: 8px;
+    }
+
+}
+
+/*Extra mall Mobile (Up to 350px)*/
+@media (max-width: 350px) {
+    #logo_image {
+        width: 25px;
+        margin-top: 7px;
+    }
+
+    #navbar #logo_and_company_name_sector h1 {
+        font-size: 13px;
+        margin-top: 10px;
+    }
+}

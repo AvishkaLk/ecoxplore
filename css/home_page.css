@@ -1,0 +1,1151 @@
+/*Home page CSS*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+#preloader {
+  background: #000 url(../images/loader.gif) no-repeat center center;
+  background-size: 40%;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+header {
+  position: relative;
+}
+
+#navbar {
+  width: 100%;
+  height: 60px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#logo_and_company_name_sector {
+  display: flex;
+  align-items: center;
+}
+
+#logo_image {
+  width: 37px;
+  margin-right: 15px;
+}
+
+#company_name {
+  margin-right: 100px;
+}
+
+#navbar #company_name h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#navbarcontent {
+  display: flex;
+  align-items: center;
+}
+
+li {
+  list-style: none;
+}
+
+#navbar #links {
+  display: flex;
+  gap: 32px;
+  margin-right: 400px;
+}
+
+#navbar a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+}
+
+#navbar #links>li>a {
+  position: relative;
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+}
+
+#navbar #links>li>a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: black;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+#navbar #links>li>a:hover::after {
+  width: 100%;
+}
+
+#navbar #links.active {
+  display: flex !important;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  padding: 10px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+#navbar #toggle_btn {
+  color: rgb(86, 85, 85);
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+}
+
+.dropdown_btn::after {
+  content: none !important;
+}
+
+#navbar #links a:hover {
+  cursor: pointer;
+}
+
+#dropdownmenu {
+  position: absolute;
+  margin-top: 10px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: none;
+  min-width: 160px;
+  z-index: 1000;
+}
+
+#dropdownmenu li {
+  display: block;
+}
+
+.dropdown_btn {
+  width: 100%;
+  padding: 10px 16px;
+  border: none;
+  background: white;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+  color: black;
+}
+
+.dropdown_btn:hover {
+  background-color: #f0f0f0;
+  font-weight: 500;
+  border-radius: 6px;
+}
+
+#dropdownmenu a {
+  display: block;
+  padding: 10px 16px;
+  color: black;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+#navbar #dropdownmenu a:hover {
+  background-color: rgb(211, 206, 206);
+  color: black;
+  font-weight: 500;
+  border-radius: 6px;
+}
+
+#user_icon {
+  width: 32px;
+  height: 32px;
+  background-color: gray;
+  color: black;
+  padding: 9px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+#slider_container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.slide img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.images {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.caption {
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+}
+
+.caption h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.caption p {
+  font-size: 1rem;
+}
+
+/*Both arrow's vertical positions*/
+.arrow_buttons {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 2;
+}
+
+/*Left arrow horizontal positions */
+#preview {
+  left: 10px;
+}
+
+/*Right arrow horizontal positions */
+
+#next {
+  right: 10px;
+}
+
+.arrow_buttons:hover {
+  color: black;
+}
+
+/* Intro Section  */
+#intro_section {
+  padding: 80px 10%;
+  text-align: center;
+  background: #f5f5f5;
+}
+
+#intro_section h2 {
+  font-size: 32px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+#intro_section p {
+  font-size: 16px;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Featured Tours */
+#featured_tours {
+  padding: 80px 10%;
+  background: #ffffff;
+}
+
+#featured_tours h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 50px;
+  color: #2c3e50;
+}
+
+/* Tour Cards Grid */
+.tour_cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* Individual Card */
+.tour_card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tour_card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Image */
+.tour_card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Tour Title */
+.tour_card h3 {
+  font-size: 22px;
+  margin: 15px 0 10px;
+  color: #2c3e50;
+}
+
+/* Description */
+.tour_card p {
+  font-size: 15px;
+  color: #666;
+  padding: 0 20px;
+}
+
+/* Learn More Button */
+.learn_more_btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 28px;
+  background: #1abc9c;
+  color: #fff;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 15px;
+  transition: background 0.3s ease;
+}
+
+.learn_more_btn:hover {
+  background: #16a085;
+}
+
+/*Announcment part*/
+.announcements {
+  position: relative;
+  max-width: 1300px;
+  margin: 20px auto;
+  padding: 20px 25px;
+  background-color: #f5f2f2;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #444;
+}
+
+#announcement_close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  color: rgb(57, 55, 55);
+  transition: color 0.2s ease;
+}
+
+#announcement_close:hover {
+  color: #000000;
+  cursor: pointer;
+}
+
+.announcements h2 {
+  font-size: 1.5rem;
+  color: #008080;
+  margin-bottom: 15px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.announcements p {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #444;
+  font-family: "Montserrat", sans-serif;
+  font-size: small;
+}
+
+.announcements ol {
+  margin: 12px 0 20px 20px;
+  color: #444;
+}
+
+.announcements li {
+  margin-bottom: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-size: small;
+}
+
+.announcements strong {
+  color: #008080;
+}
+
+/*contact panel*/
+#contact_panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  background-color: #eaf8f6;
+  padding: 60px 100px 40px;
+  position: relative;
+  box-shadow: 0 -6px 10px -5px rgba(33, 33, 33, 0.2);
+  font-family: "Poppins", sans-serif;
+}
+
+/*Left Panel*/
+#contact_panel_left {
+  flex: 1 1 40%;
+  max-width: 40%;
+}
+
+#contact_panel_left #logo_part img {
+  width: 80px;
+  margin-bottom: 5px;
+  margin-left: 15px;
+}
+
+#contact_panel_left #logo_part h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #004d40;
+  margin-top: 5px;
+  text-align: start;
+}
+
+#contact_panel_left h1 span {
+  display: block;
+  margin-left: -4px;
+}
+
+#contact_panel_left h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+  margin: 15px 0 5px;
+}
+
+#contact_panel_left h3 {
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+#contact_panel_left h3 span {
+  margin-left: 15px;
+  margin-top: 5px;
+}
+
+#contact_panel_left h4 {
+  color: #00796b;
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+#contact_panel_left .socia_media_icons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+#contact_panel_left .socia_media_icons i {
+  font-size: 20px;
+  color: #00796b;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+#contact_panel_left .socia_media_icons i:hover {
+  color: #004d40;
+}
+
+#contact_panel_left p {
+  font-size: 12px;
+  color: #444;
+  margin-top: 15px;
+  margin-right: 20px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+#contact_panel_left p:hover {
+  text-decoration: underline;
+}
+
+/*Right Panel*/
+#contact_panel_right {
+  flex: 1 1 55%;
+  max-width: 55%;
+  text-align: right;
+}
+
+#contact_panel_right h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #004d40;
+  margin-bottom: 8px;
+}
+
+#contact_panel_right h1 span {
+  display: block;
+  font-size: 20px;
+  color: #00796b;
+  margin-top: 6px;
+}
+
+#contact_panel_right h2 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #666;
+  margin-top: 20px;
+}
+
+#contact_panel_right h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+  margin-top: 5px;
+}
+
+/*WhatsApp icon + text*/
+#contact_panel_right img {
+  width: 42px;
+  height: 42px;
+  vertical-align: middle;
+}
+
+#whatsapp_content {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1a1a1a;
+  vertical-align: middle;
+}
+
+/*Bottom line + copyright*/
+.bottom_line {
+  width: 100%;
+  height: 1px;
+  background-color: #cccccc;
+  margin-top: 40px;
+}
+
+#copyright_part {
+  width: 100%;
+  text-align: center;
+  font-size: 11px;
+  color: #444;
+  margin-top: 20px;
+}
+
+/*Media query*/
+/*Large Desktops (1200px)*/
+@media (min-width: 1200px) {
+  #navbar #logo_and_company_name_sector img {
+    margin-left: 20px;
+  }
+
+  #navbar #links {
+    gap: 40px;
+  }
+
+  #links .fa-sharp {
+    margin-left: 7px;
+  }
+
+  #navbar #links li a {
+    font-size: 14px;
+  }
+
+  #user_icon {
+    margin-left: -140px;
+  }
+
+  #slider_container {
+    height: 100vh;
+  }
+
+  .slide img {
+    object-fit: cover;
+  }
+
+  #contact_panel {
+    padding: 80px 120px 50px;
+  }
+
+  .caption h2 {
+    font-size: 2.5rem;
+  }
+}
+
+/*Laptops (992px to 1199px)*/
+@media (max-width: 1199px) {
+  #navbar #logo_and_company_name_sector h1 {
+    font-size: 21px;
+  }
+
+  #navbar #links {
+    margin-right: 200px;
+    gap: 25px;
+  }
+
+  #links .fa-sharp {
+    margin-left: 7px;
+  }
+
+  #navbar #links li a {
+    font-size: 13px;
+  }
+
+  #navbar img {
+    margin-left: 10px;
+  }
+
+  #slider_container {
+    height: 90vh;
+  }
+
+  .slide img {
+    object-fit: cover;
+  }
+
+  .announcements {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  #contact_panel {
+    padding: 60px 80px 40px;
+  }
+
+  #contact_panel_left,
+  #contact_panel_right {
+    max-width: 48%;
+  }
+
+  .caption {
+    bottom: 15%;
+    left: 8%;
+    max-width: 400px;
+  }
+
+  .caption h2 {
+    font-size: 1.8rem;
+  }
+
+  .bottom_line {
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+
+  #copyright_part {
+    font-size: 10px;
+    margin-top: 20px;
+  }
+}
+
+/*Tablets (768px to 991px)*/
+@media (max-width: 991px) {
+  #logo_image {
+    width: 30px;
+    margin-top: 2px;
+  }
+
+  #navbar #logo_and_company_name_sector h1 {
+    font-size: 19.5px;
+    margin-top: 3px;
+  }
+
+  #user_icon {
+    display: none;
+  }
+
+  #navbar #links {
+    margin-right: 50px;
+    gap: 25px;
+  }
+
+  #links .fa-sharp {
+    margin-left: 7px;
+  }
+
+  #slider_container {
+    height: 75vh;
+  }
+
+  .slide img {
+    object-fit: cover;
+  }
+
+  /* Intro Section  */
+  #intro_section {
+    padding: 60px 10%;
+  }
+
+  #intro_section h2 {
+    font-size: 26px;
+  }
+
+  #intro_section p {
+    font-size: 13.5px;
+  }
+
+  #featured_tours {
+    padding: 50px 10%;
+  }
+
+  #featured_tours h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  /* Tour Title */
+  .tour_card h3 {
+    font-size: 22px;
+  }
+
+  /* Description */
+  .tour_card p {
+    font-size: 13px;
+  }
+
+  /* Learn More Button */
+  .learn_more_btn {
+    padding: 10px 26px;
+    border-radius: 25px;
+    font-size: 14px;
+  }
+
+  .announcements {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  #contact_panel {
+    padding: 60px 80px 40px;
+  }
+
+  #contact_panel_left,
+  #contact_panel_right {
+    max-width: 48%;
+  }
+
+  .caption {
+    bottom: 15%;
+    left: 8%;
+    max-width: 400px;
+  }
+
+  .caption h2 {
+    font-size: 1.8rem;
+  }
+
+  .bottom_line {
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+
+  #copyright_part {
+    font-size: 10px;
+    margin-top: 20px;
+  }
+}
+
+/*Mobile (576px to 767px)*/
+@media (max-width: 767px) {
+  #logo_image {
+    width: 30px;
+    margin-top: 8px;
+  }
+
+  #navbar #logo_and_company_name_sector h1 {
+    font-size: 18px;
+    margin-top: 8px;
+  }
+
+  #navbar {
+    height: 60px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  #navbar #links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: white;
+    text-align: left;
+    padding: 10px 0;
+  }
+
+  #links .fa-sharp {
+    margin-left: 7px;
+  }
+
+  #navbar #links a {
+    margin-left: 20px;
+  }
+
+  #dropdownmenu a{
+    margin-left: 0px !important;
+  }
+
+  #navbar #links.active {
+    display: flex;
+  }
+
+  #logo_and_company_name_sector {
+    margin-bottom: 10px;
+  }
+
+  #navbar #toggle_btn {
+    position: absolute;
+    right: 20px;
+    top: 13px;
+    display: block;
+  }
+
+  #navbar #toggle_btn:hover {
+    color: black;
+  }
+
+  #user_icon {
+    display: none;
+  }
+
+  #slider_container {
+    height: 60vh;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Intro Section  */
+  #intro_section {
+    padding: 50px 10%;
+  }
+
+  #intro_section h2 {
+    font-size: 24px;
+  }
+
+  #intro_section p {
+    font-size: 12px;
+  }
+
+  #featured_tours {
+    padding: 45px 10%;
+  }
+
+  #featured_tours h2 {
+    font-size: 23px;
+    margin-bottom: 30px;
+  }
+
+  /* Tour Title */
+  .tour_card h3 {
+    font-size: 20px;
+  }
+
+  /* Description */
+  .tour_card p {
+    font-size: 12px;
+  }
+
+  /* Learn More Button */
+  .learn_more_btn {
+    padding: 10px 26px;
+    border-radius: 25px;
+    font-size: 14px;
+  }
+
+  .caption {
+    bottom: 8%;
+    left: 5%;
+    padding: 10px;
+  }
+
+  .caption h2 {
+    font-size: 1.4rem;
+  }
+
+  .caption p {
+    font-size: 0.9rem;
+  }
+
+  .arrow_buttons {
+    font-size: 18px;
+    padding: 8px;
+  }
+
+  .announcements {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  #contact_panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 30px 20px;
+  }
+
+  #contact_panel_left,
+  #contact_panel_right {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  #contact_panel_left #logo_part {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  #contact_panel_left #logo_part img {
+    margin: 0 auto 8px;
+    display: block;
+  }
+
+  #contact_panel_left #logo_part h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 20px;
+  }
+
+  #contact_panel_left .socia_media_icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  #contact_panel_right h1 {
+    font-size: 20px;
+  }
+
+  #contact_panel_right h1 span {
+    font-size: 16px;
+  }
+
+  #whatsapp_content {
+    font-size: 14px;
+  }
+
+  .bottom_line {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  #copyright_part {
+    font-size: 10px;
+    margin-top: 20px;
+  }
+}
+
+/*Small Mobile (Up to 575px)*/
+@media (max-width: 575px) {
+  #logo_image {
+    width: 27px;
+    margin-top: 7px;
+  }
+
+  #navbar #logo_and_company_name_sector h1 {
+    font-size: 14.5px;
+    margin-top: 10px;
+  }
+
+  #navbar {
+    padding: 8px 15px;
+  }
+
+  #navbar #links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: white;
+    text-align: left;
+    padding: 10px 0;
+  }
+
+  #navbar #links.active {
+    display: flex;
+  }
+
+  #toggle_btn {
+    display: block;
+  }
+
+  #user_icon {
+    display: none;
+  }
+
+  #slider_container {
+    height: 45vh;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Intro Section  */
+  #intro_section {
+    padding: 50px 10%;
+  }
+
+  #intro_section h2 {
+    font-size: 20px;
+  }
+
+  #intro_section p {
+    font-size: 10px;
+  }
+
+  #featured_tours {
+    padding: 30px 10%;
+  }
+
+  #featured_tours h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+
+  /* Tour Title */
+  .tour_card h3 {
+    font-size: 18px;
+  }
+
+  /* Description */
+  .tour_card p {
+    font-size: 10px;
+  }
+
+  /* Learn More Button */
+  .learn_more_btn {
+    padding: 8px 24px;
+    border-radius: 25px;
+    font-size: 13px;
+  }
+
+  .caption {
+    bottom: 5%;
+    left: 5%;
+    max-width: 280px;
+    padding: 8px;
+  }
+
+  .caption h2 {
+    font-size: 1.2rem;
+  }
+
+  .caption p {
+    font-size: 0.8rem;
+  }
+
+  #contact_panel {
+    padding: 30px 20px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #contact_panel_left,
+  #contact_panel_right {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  #contact_panel_left #logo_part {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  #contact_panel_left #logo_part img {
+    margin: 0 auto 5px;
+  }
+
+  #contact_panel_left #logo_part h1 {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  #contact_panel_left .socia_media_icons {
+    justify-content: center;
+  }
+
+  #contact_panel_right h3 {
+    font-size: 16px;
+  }
+
+  .bottom_line {
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+
+  #copyright_part {
+    font-size: 10px;
+    margin-top: 15px;
+  }
+}
+
+/*Extra mall Mobile (Up to 350px)*/
+@media (max-width: 350px) {
+  #logo_image {
+    width: 25px;
+    margin-top: 7px;
+  }
+
+  #navbar #logo_and_company_name_sector h1 {
+    font-size: 13px;
+    margin-top: 10px;
+  }
+}
